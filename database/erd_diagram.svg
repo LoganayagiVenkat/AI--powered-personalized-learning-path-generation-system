@@ -1,0 +1,657 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1620 1120" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <!-- Diamond Marker for relationships -->
+    <marker id="diamond" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <polygon points="5,1 9,5 5,9 1,5" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    </marker>
+    <!-- Drop Shadow -->
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <style>
+    .tbl-box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.5px; rx: 3px; }
+    .tbl-header { fill: #f8fafc; stroke: #1e293b; stroke-width: 1.5px; }
+    .header-text { font-size: 13px; font-weight: bold; fill: #0f172a; text-anchor: middle; letter-spacing: 0.8px; }
+    .col-divider { stroke: #cbd5e1; stroke-width: 1px; }
+    .row-divider { stroke: #f1f5f9; stroke-width: 1px; }
+    .key-pk { font-size: 11px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
+    .key-fk { font-size: 11px; font-weight: 600; fill: #475569; text-anchor: middle; }
+    .attr-text { font-size: 11.5px; fill: #1e293b; }
+    .attr-pk { font-size: 11.5px; font-weight: bold; fill: #0f172a; }
+    .attr-fk { font-size: 11.5px; font-weight: 600; fill: #334155; }
+    .conn-line { fill: none; stroke: #1e293b; stroke-width: 1.4px; }
+    .bus-line { fill: none; stroke: #0f172a; stroke-width: 1.6px; }
+    .title-banner { font-size: 18px; font-weight: bold; fill: #0f172a; text-anchor: middle; letter-spacing: 1px; }
+    .subtitle-banner { font-size: 12px; fill: #64748b; text-anchor: middle; }
+  </style>
+
+  <!-- DIAGRAM HEADER TITLE -->
+  <text x="810" y="28" class="title-banner">ENTITY-RELATIONSHIP (ER) RELATIONAL DATABASE SCHEMA</text>
+  <text x="810" y="46" class="subtitle-banner">AI-Powered Personalized Learning Path Generation System</text>
+
+  <!-- ==================================================================== -->
+  <!-- TOP TIER TABLES -->
+  <!-- ==================================================================== -->
+
+  <!-- 1. USERS TABLE [x: 40, y: 70, w: 220, h: 140] -->
+  <g id="tbl-users" filter="url(#shadow)">
+    <rect x="40" y="70" width="220" height="140" class="tbl-box" />
+    <path d="M 40 70 L 260 70 L 260 98 L 40 98 Z" class="tbl-header" />
+    <text x="150" y="89" class="header-text">USERS</text>
+    <line x1="82" y1="98" x2="82" y2="210" class="col-divider" />
+    
+    <!-- Rows -->
+    <text x="61" y="117" class="key-pk">PK</text>
+    <text x="94" y="117" class="attr-pk">user_id (id)</text>
+    <line x1="40" y1="124" x2="260" y2="124" class="row-divider" />
+
+    <text x="94" y="139" class="attr-text">name</text>
+    <line x1="40" y1="145" x2="260" y2="145" class="row-divider" />
+
+    <text x="94" y="160" class="attr-text">email</text>
+    <line x1="40" y1="166" x2="260" y2="166" class="row-divider" />
+
+    <text x="94" y="181" class="attr-text">password_hash</text>
+    <line x1="40" y1="187" x2="260" y2="187" class="row-divider" />
+
+    <text x="94" y="202" class="attr-text">created_at</text>
+  </g>
+
+  <!-- 2. CAREER_GOALS TABLE [x: 40, y: 240, w: 220, h: 145] -->
+  <g id="tbl-career-goals" filter="url(#shadow)">
+    <rect x="40" y="240" width="220" height="145" class="tbl-box" />
+    <path d="M 40 240 L 260 240 L 260 268 L 40 268 Z" class="tbl-header" />
+    <text x="150" y="259" class="header-text">CAREER_GOALS</text>
+    <line x1="82" y1="268" x2="82" y2="385" class="col-divider" />
+
+    <text x="61" y="287" class="key-pk">PK</text>
+    <text x="94" y="287" class="attr-pk">goal_id (id)</text>
+    <line x1="40" y1="294" x2="260" y2="294" class="row-divider" />
+
+    <text x="94" y="309" class="attr-text">title</text>
+    <line x1="40" y1="315" x2="260" y2="315" class="row-divider" />
+
+    <text x="94" y="330" class="attr-text">target_role</text>
+    <line x1="40" y1="336" x2="260" y2="336" class="row-divider" />
+
+    <text x="94" y="351" class="attr-text">description</text>
+    <line x1="40" y1="357" x2="260" y2="357" class="row-divider" />
+
+    <text x="94" y="372" class="attr-text">required_skills_json</text>
+  </g>
+
+  <!-- 3. STUDENT_PROFILES TABLE (Central Entity, like PATIENTS) [x: 320, y: 70, w: 270, h: 285] -->
+  <g id="tbl-student-profiles" filter="url(#shadow)">
+    <rect x="320" y="70" width="270" height="285" class="tbl-box" />
+    <path d="M 320 70 L 590 70 L 590 98 L 320 98 Z" class="tbl-header" />
+    <text x="455" y="89" class="header-text">STUDENT_PROFILES</text>
+    <line x1="365" y1="98" x2="365" y2="355" class="col-divider" />
+
+    <text x="342" y="117" class="key-pk">PK</text>
+    <text x="375" y="117" class="attr-pk">profile_id (id)</text>
+    <line x1="320" y1="123" x2="590" y2="123" class="row-divider" />
+
+    <text x="342" y="137" class="key-fk">FK</text>
+    <text x="375" y="137" class="attr-fk">user_id</text>
+    <line x1="320" y1="143" x2="590" y2="143" class="row-divider" />
+
+    <text x="342" y="157" class="key-fk">FK</text>
+    <text x="375" y="157" class="attr-fk">career_goal_id</text>
+    <line x1="320" y1="163" x2="590" y2="163" class="row-divider" />
+
+    <text x="375" y="177" class="attr-text">education_level</text>
+    <line x1="320" y1="183" x2="590" y2="183" class="row-divider" />
+
+    <text x="375" y="197" class="attr-text">experience_level</text>
+    <line x1="320" y1="203" x2="590" y2="203" class="row-divider" />
+
+    <text x="375" y="217" class="attr-text">interests</text>
+    <line x1="320" y1="223" x2="590" y2="223" class="row-divider" />
+
+    <text x="375" y="237" class="attr-text">target_job_role</text>
+    <line x1="320" y1="243" x2="590" y2="243" class="row-divider" />
+
+    <text x="375" y="257" class="attr-text">overall_skill_level</text>
+    <line x1="320" y1="263" x2="590" y2="263" class="row-divider" />
+
+    <text x="375" y="277" class="attr-text">bio</text>
+    <line x1="320" y1="283" x2="590" y2="283" class="row-divider" />
+
+    <text x="375" y="297" class="attr-text">streak_days</text>
+    <line x1="320" y1="303" x2="590" y2="303" class="row-divider" />
+
+    <text x="375" y="317" class="attr-text">total_learning_minutes</text>
+    <line x1="320" y1="323" x2="590" y2="323" class="row-divider" />
+
+    <text x="375" y="338" class="attr-text">updated_at</text>
+  </g>
+
+  <!-- 4. LEARNING_PATHS TABLE (like APPOINTMENTS) [x: 660, y: 70, w: 260, h: 225] -->
+  <g id="tbl-learning-paths" filter="url(#shadow)">
+    <rect x="660" y="70" width="260" height="225" class="tbl-box" />
+    <path d="M 660 70 L 920 70 L 920 98 L 660 98 Z" class="tbl-header" />
+    <text x="790" y="89" class="header-text">LEARNING_PATHS</text>
+    <line x1="705" y1="98" x2="705" y2="295" class="col-divider" />
+
+    <text x="682" y="117" class="key-pk">PK</text>
+    <text x="715" y="117" class="attr-pk">path_id (id)</text>
+    <line x1="660" y1="123" x2="920" y2="123" class="row-divider" />
+
+    <text x="682" y="138" class="key-fk">FK</text>
+    <text x="715" y="138" class="attr-fk">user_id</text>
+    <line x1="660" y1="144" x2="920" y2="144" class="row-divider" />
+
+    <text x="682" y="159" class="key-fk">FK</text>
+    <text x="715" y="159" class="attr-fk">career_goal_id</text>
+    <line x1="660" y1="165" x2="920" y2="165" class="row-divider" />
+
+    <text x="715" y="180" class="attr-text">title</text>
+    <line x1="660" y1="186" x2="920" y2="186" class="row-divider" />
+
+    <text x="715" y="201" class="attr-text">total_topics</text>
+    <line x1="660" y1="207" x2="920" y2="207" class="row-divider" />
+
+    <text x="715" y="222" class="attr-text">completed_topics</text>
+    <line x1="660" y1="228" x2="920" y2="228" class="row-divider" />
+
+    <text x="715" y="243" class="attr-text">overall_progress</text>
+    <line x1="660" y1="249" x2="920" y2="249" class="row-divider" />
+
+    <text x="715" y="264" class="attr-text">status (active/completed)</text>
+    <line x1="660" y1="270" x2="920" y2="270" class="row-divider" />
+
+    <text x="715" y="285" class="attr-text">generated_by_algorithm</text>
+  </g>
+
+  <!-- 5. LEARNING_PATH_TOPICS TABLE (Junction) [x: 990, y: 70, w: 260, h: 225] -->
+  <g id="tbl-path-topics" filter="url(#shadow)">
+    <rect x="990" y="70" width="260" height="225" class="tbl-box" />
+    <path d="M 990 70 L 1250 70 L 1250 98 L 990 98 Z" class="tbl-header" />
+    <text x="1120" y="89" class="header-text">LEARNING_PATH_TOPICS</text>
+    <line x1="1035" y1="98" x2="1035" y2="295" class="col-divider" />
+
+    <text x="1012" y="117" class="key-pk">PK</text>
+    <text x="1045" y="117" class="attr-pk">id</text>
+    <line x1="990" y1="123" x2="1250" y2="123" class="row-divider" />
+
+    <text x="1012" y="138" class="key-fk">FK</text>
+    <text x="1045" y="138" class="attr-fk">learning_path_id</text>
+    <line x1="990" y1="144" x2="1250" y2="144" class="row-divider" />
+
+    <text x="1012" y="159" class="key-fk">FK</text>
+    <text x="1045" y="159" class="attr-fk">topic_id</text>
+    <line x1="990" y1="165" x2="1250" y2="165" class="row-divider" />
+
+    <text x="1045" y="180" class="attr-text">sequence_order</text>
+    <line x1="990" y1="186" x2="1250" y2="186" class="row-divider" />
+
+    <text x="1045" y="201" class="attr-text">status (pending/done/remedial)</text>
+    <line x1="990" y1="207" x2="1250" y2="207" class="row-divider" />
+
+    <text x="1045" y="222" class="attr-text">score</text>
+    <line x1="990" y1="228" x2="1250" y2="228" class="row-divider" />
+
+    <text x="1045" y="243" class="attr-text">recommended_reason</text>
+    <line x1="990" y1="249" x2="1250" y2="249" class="row-divider" />
+
+    <text x="1045" y="264" class="attr-text">is_adaptive_addition</text>
+    <line x1="990" y1="270" x2="1250" y2="270" class="row-divider" />
+
+    <text x="1045" y="285" class="attr-text">estimated_learning_time</text>
+  </g>
+
+  <!-- 6. TOPICS TABLE (like DOCTORS) [x: 1320, y: 70, w: 260, h: 205] -->
+  <g id="tbl-topics" filter="url(#shadow)">
+    <rect x="1320" y="70" width="260" height="205" class="tbl-box" />
+    <path d="M 1320 70 L 1580 70 L 1580 98 L 1320 98 Z" class="tbl-header" />
+    <text x="1450" y="89" class="header-text">TOPICS</text>
+    <line x1="1365" y1="98" x2="1365" y2="275" class="col-divider" />
+
+    <text x="1342" y="117" class="key-pk">PK</text>
+    <text x="1375" y="117" class="attr-pk">topic_id (id)</text>
+    <line x1="1320" y1="123" x2="1580" y2="123" class="row-divider" />
+
+    <text x="1375" y="138" class="attr-text">title</text>
+    <line x1="1320" y1="144" x2="1580" y2="144" class="row-divider" />
+
+    <text x="1375" y="159" class="attr-text">category</text>
+    <line x1="1320" y1="165" x2="1580" y2="165" class="row-divider" />
+
+    <text x="1375" y="180" class="attr-text">difficulty (Beginner/Adv)</text>
+    <line x1="1320" y1="186" x2="1580" y2="186" class="row-divider" />
+
+    <text x="1375" y="201" class="attr-text">estimated_hours</text>
+    <line x1="1320" y1="207" x2="1580" y2="207" class="row-divider" />
+
+    <text x="1375" y="222" class="attr-text">description</text>
+    <line x1="1320" y1="228" x2="1580" y2="228" class="row-divider" />
+
+    <text x="1375" y="243" class="attr-text">key_concepts_json</text>
+    <line x1="1320" y1="249" x2="1580" y2="249" class="row-divider" />
+
+    <text x="1375" y="264" class="attr-text">resources_json</text>
+  </g>
+
+  <!-- 7. PREREQUISITES TABLE (DAG Dependency) [x: 1320, y: 300, w: 260, h: 90] -->
+  <g id="tbl-prerequisites" filter="url(#shadow)">
+    <rect x="1320" y="300" width="260" height="90" class="tbl-box" />
+    <path d="M 1320 300 L 1580 300 L 1580 326 L 1320 326 Z" class="tbl-header" />
+    <text x="1450" y="318" class="header-text">PREREQUISITES (DAG)</text>
+    <line x1="1365" y1="326" x2="1365" y2="390" class="col-divider" />
+
+    <text x="1342" y="342" class="key-pk">PK</text>
+    <text x="1375" y="342" class="attr-pk">id</text>
+    <line x1="1320" y1="347" x2="1580" y2="347" class="row-divider" />
+
+    <text x="1342" y="362" class="key-fk">FK</text>
+    <text x="1375" y="362" class="attr-fk">topic_id</text>
+    <line x1="1320" y1="368" x2="1580" y2="368" class="row-divider" />
+
+    <text x="1342" y="382" class="key-fk">FK</text>
+    <text x="1375" y="382" class="attr-fk">prerequisite_topic_id</text>
+  </g>
+
+  <!-- ==================================================================== -->
+  <!-- TOP TIER CONNECTING LINES -->
+  <!-- ==================================================================== -->
+  <!-- USERS.id -> STUDENT_PROFILES.user_id -->
+  <path d="M 260 115 L 290 115 L 290 137 L 320 137" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- CAREER_GOALS.id -> STUDENT_PROFILES.career_goal_id -->
+  <path d="M 260 285 L 290 285 L 290 157 L 320 157" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- STUDENT_PROFILES -> LEARNING_PATHS -->
+  <path d="M 590 137 L 660 137" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- LEARNING_PATHS -> LEARNING_PATH_TOPICS -->
+  <path d="M 920 137 L 990 137" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- TOPICS -> LEARNING_PATH_TOPICS -->
+  <path d="M 1320 157 L 1250 157" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- TOPICS -> PREREQUISITES -->
+  <path d="M 1450 275 L 1450 300" class="conn-line" marker-end="url(#arrow)" />
+
+
+  <!-- ==================================================================== -->
+  <!-- CENTRAL BUS ARCHITECTURE (Branching from STUDENT_PROFILES to 5 Subsystems) -->
+  <!-- ==================================================================== -->
+  <!-- Trunk from Student Profiles downwards -->
+  <line x1="455" y1="355" x2="455" y2="425" class="bus-line" />
+  <!-- Horizontal Distribution Bus across 5 modules -->
+  <line x1="140" y1="425" x2="1450" y2="425" class="bus-line" />
+
+  <!-- Drops to each column -->
+  <!-- Col 1: Skills -->
+  <line x1="140" y1="425" x2="140" y2="460" class="bus-line" marker-end="url(#arrow)" />
+  <!-- Col 2: Diagnostic Assessments -->
+  <line x1="455" y1="425" x2="455" y2="460" class="bus-line" marker-end="url(#arrow)" />
+  <!-- Col 3: Quizzes & Adaptive Remediation -->
+  <line x1="770" y1="425" x2="770" y2="460" class="bus-line" marker-end="url(#arrow)" />
+  <!-- Col 4: Progress & Recommendations -->
+  <line x1="1110" y1="425" x2="1110" y2="460" class="bus-line" marker-end="url(#arrow)" />
+  <!-- Col 5: Conversational AI & Voice -->
+  <line x1="1450" y1="425" x2="1450" y2="460" class="bus-line" marker-end="url(#arrow)" />
+
+
+  <!-- ==================================================================== -->
+  <!-- BOTTOM TIER: 5 MODULAR COLUMNS -->
+  <!-- ==================================================================== -->
+
+  <!-- ================= COLUMN 1: SKILLS SUBSYSTEM ================= -->
+  <!-- SKILLS TABLE [x: 30, y: 460, w: 220, h: 125] -->
+  <g id="tbl-skills" filter="url(#shadow)">
+    <rect x="30" y="460" width="220" height="125" class="tbl-box" />
+    <path d="M 30 460 L 250 460 L 250 486 L 30 486 Z" class="tbl-header" />
+    <text x="140" y="478" class="header-text">SKILLS</text>
+    <line x1="72" y1="486" x2="72" y2="585" class="col-divider" />
+
+    <text x="51" y="504" class="key-pk">PK</text>
+    <text x="82" y="504" class="attr-pk">skill_id (id)</text>
+    <line x1="30" y1="510" x2="250" y2="510" class="row-divider" />
+
+    <text x="82" y="527" class="attr-text">name</text>
+    <line x1="30" y1="533" x2="250" y2="533" class="row-divider" />
+
+    <text x="82" y="550" class="attr-text">category</text>
+    <line x1="30" y1="556" x2="250" y2="556" class="row-divider" />
+
+    <text x="82" y="573" class="attr-text">description</text>
+  </g>
+
+  <!-- STUDENT_SKILLS TABLE [x: 30, y: 620, w: 220, h: 160] -->
+  <g id="tbl-student-skills" filter="url(#shadow)">
+    <rect x="30" y="620" width="220" height="160" class="tbl-box" />
+    <path d="M 30 620 L 250 620 L 250 646 L 30 646 Z" class="tbl-header" />
+    <text x="140" y="638" class="header-text">STUDENT_SKILLS</text>
+    <line x1="72" y1="646" x2="72" y2="780" class="col-divider" />
+
+    <text x="51" y="664" class="key-pk">PK</text>
+    <text x="82" y="664" class="attr-pk">id</text>
+    <line x1="30" y1="670" x2="250" y2="670" class="row-divider" />
+
+    <text x="51" y="687" class="key-fk">FK</text>
+    <text x="82" y="687" class="attr-fk">user_id</text>
+    <line x1="30" y1="693" x2="250" y2="693" class="row-divider" />
+
+    <text x="51" y="710" class="key-fk">FK</text>
+    <text x="82" y="710" class="attr-fk">skill_id</text>
+    <line x1="30" y1="716" x2="250" y2="716" class="row-divider" />
+
+    <text x="82" y="733" class="attr-text">current_level</text>
+    <line x1="30" y1="739" x2="250" y2="739" class="row-divider" />
+
+    <text x="82" y="755" class="attr-text">confidence_score</text>
+    <line x1="30" y1="761" x2="250" y2="761" class="row-divider" />
+
+    <text x="82" y="774" class="attr-text">verified_by_assessment</text>
+  </g>
+
+  <!-- SKILL_GAPS TABLE [x: 30, y: 815, w: 220, h: 210] -->
+  <g id="tbl-skill-gaps" filter="url(#shadow)">
+    <rect x="30" y="815" width="220" height="210" class="tbl-box" />
+    <path d="M 30 815 L 250 815 L 250 841 L 30 841 Z" class="tbl-header" />
+    <text x="140" y="833" class="header-text">SKILL_GAPS</text>
+    <line x1="72" y1="841" x2="72" y2="1025" class="col-divider" />
+
+    <text x="51" y="858" class="key-pk">PK</text>
+    <text x="82" y="858" class="attr-pk">gap_id (id)</text>
+    <line x1="30" y1="864" x2="250" y2="864" class="row-divider" />
+
+    <text x="51" y="880" class="key-fk">FK</text>
+    <text x="82" y="880" class="attr-fk">user_id</text>
+    <line x1="30" y1="886" x2="250" y2="886" class="row-divider" />
+
+    <text x="51" y="902" class="key-fk">FK</text>
+    <text x="82" y="902" class="attr-fk">skill_id</text>
+    <line x1="30" y1="908" x2="250" y2="908" class="row-divider" />
+
+    <text x="51" y="924" class="key-fk">FK</text>
+    <text x="82" y="924" class="attr-fk">target_career_id</text>
+    <line x1="30" y1="930" x2="250" y2="930" class="row-divider" />
+
+    <text x="51" y="946" class="key-fk">FK</text>
+    <text x="82" y="946" class="attr-fk">recommended_topic_id</text>
+    <line x1="30" y1="952" x2="250" y2="952" class="row-divider" />
+
+    <text x="82" y="968" class="attr-text">required_level</text>
+    <line x1="30" y1="974" x2="250" y2="974" class="row-divider" />
+
+    <text x="82" y="990" class="attr-text">current_level</text>
+    <line x1="30" y1="996" x2="250" y2="996" class="row-divider" />
+
+    <text x="82" y="1013" class="attr-text">gap_score / status</text>
+  </g>
+
+  <!-- Connectors Col 1 -->
+  <line x1="140" y1="585" x2="140" y2="620" class="conn-line" marker-end="url(#arrow)" />
+  <line x1="140" y1="780" x2="140" y2="815" class="conn-line" marker-end="url(#arrow)" />
+
+
+  <!-- ================= COLUMN 2: DIAGNOSTIC ASSESSMENTS ================= -->
+  <!-- ASSESSMENTS TABLE [x: 340, y: 460, w: 235, h: 160] -->
+  <g id="tbl-assessments" filter="url(#shadow)">
+    <rect x="340" y="460" width="235" height="160" class="tbl-box" />
+    <path d="M 340 460 L 575 460 L 575 486 L 340 486 Z" class="tbl-header" />
+    <text x="457" y="478" class="header-text">ASSESSMENTS</text>
+    <line x1="382" y1="486" x2="382" y2="620" class="col-divider" />
+
+    <text x="361" y="504" class="key-pk">PK</text>
+    <text x="392" y="504" class="attr-pk">assessment_id (id)</text>
+    <line x1="340" y1="510" x2="575" y2="510" class="row-divider" />
+
+    <text x="392" y="527" class="attr-text">title</text>
+    <line x1="340" y1="533" x2="575" y2="533" class="row-divider" />
+
+    <text x="392" y="550" class="attr-text">category</text>
+    <line x1="340" y1="556" x2="575" y2="556" class="row-divider" />
+
+    <text x="392" y="573" class="attr-text">description</text>
+    <line x1="340" y1="579" x2="575" y2="579" class="row-divider" />
+
+    <text x="392" y="595" class="attr-text">total_questions</text>
+    <line x1="340" y1="601" x2="575" y2="601" class="row-divider" />
+
+    <text x="392" y="614" class="attr-text">time_limit_minutes</text>
+  </g>
+
+  <!-- ASSESSMENT_RESULTS TABLE [x: 340, y: 655, w: 235, h: 200] -->
+  <g id="tbl-assessment-results" filter="url(#shadow)">
+    <rect x="340" y="655" width="235" height="200" class="tbl-box" />
+    <path d="M 340 655 L 575 655 L 575 681 L 340 681 Z" class="tbl-header" />
+    <text x="457" y="673" class="header-text">ASSESSMENT_RESULTS</text>
+    <line x1="382" y1="681" x2="382" y2="855" class="col-divider" />
+
+    <text x="361" y="699" class="key-pk">PK</text>
+    <text x="392" y="699" class="attr-pk">result_id (id)</text>
+    <line x1="340" y1="705" x2="575" y2="705" class="row-divider" />
+
+    <text x="361" y="721" class="key-fk">FK</text>
+    <text x="392" y="721" class="attr-fk">user_id</text>
+    <line x1="340" y1="727" x2="575" y2="727" class="row-divider" />
+
+    <text x="361" y="743" class="key-fk">FK</text>
+    <text x="392" y="743" class="attr-fk">assessment_id</text>
+    <line x1="340" y1="749" x2="575" y2="749" class="row-divider" />
+
+    <text x="392" y="765" class="attr-text">total_score</text>
+    <line x1="340" y1="771" x2="575" y2="771" class="row-divider" />
+
+    <text x="392" y="787" class="attr-text">max_score</text>
+    <line x1="340" y1="793" x2="575" y2="793" class="row-divider" />
+
+    <text x="392" y="809" class="attr-text">percentage</text>
+    <line x1="340" y1="815" x2="575" y2="815" class="row-divider" />
+
+    <text x="392" y="831" class="attr-text">skill_level_assigned</text>
+    <line x1="340" y1="837" x2="575" y2="837" class="row-divider" />
+
+    <text x="392" y="848" class="attr-text">weak_topics_json</text>
+  </g>
+
+  <!-- Connectors Col 2 -->
+  <line x1="457" y1="620" x2="457" y2="655" class="conn-line" marker-end="url(#arrow)" />
+
+
+  <!-- ================= COLUMN 3: QUIZZES & ADAPTIVE REMEDIATION ================= -->
+  <!-- QUIZZES TABLE [x: 650, y: 460, w: 235, h: 145] -->
+  <g id="tbl-quizzes" filter="url(#shadow)">
+    <rect x="650" y="460" width="235" height="145" class="tbl-box" />
+    <path d="M 650 460 L 885 460 L 885 486 L 650 486 Z" class="tbl-header" />
+    <text x="767" y="478" class="header-text">QUIZZES</text>
+    <line x1="692" y1="486" x2="692" y2="605" class="col-divider" />
+
+    <text x="671" y="504" class="key-pk">PK</text>
+    <text x="702" y="504" class="attr-pk">quiz_id (id)</text>
+    <line x1="650" y1="510" x2="885" y2="510" class="row-divider" />
+
+    <text x="671" y="527" class="key-fk">FK</text>
+    <text x="702" y="527" class="attr-fk">topic_id</text>
+    <line x1="650" y1="533" x2="885" y2="533" class="row-divider" />
+
+    <text x="702" y="550" class="attr-text">title</text>
+    <line x1="650" y1="556" x2="885" y2="556" class="row-divider" />
+
+    <text x="702" y="573" class="attr-text">difficulty</text>
+    <line x1="650" y1="579" x2="885" y2="579" class="row-divider" />
+
+    <text x="702" y="596" class="attr-text">time_limit_minutes</text>
+  </g>
+
+  <!-- QUIZ_RESULTS TABLE [x: 650, y: 645, w: 235, h: 195] -->
+  <g id="tbl-quiz-results" filter="url(#shadow)">
+    <rect x="650" y="645" width="235" height="195" class="tbl-box" />
+    <path d="M 650 645 L 885 645 L 885 671 L 650 671 Z" class="tbl-header" />
+    <text x="767" y="663" class="header-text">QUIZ_RESULTS</text>
+    <line x1="692" y1="671" x2="692" y2="840" class="col-divider" />
+
+    <text x="671" y="689" class="key-pk">PK</text>
+    <text x="702" y="689" class="attr-pk">result_id (id)</text>
+    <line x1="650" y1="695" x2="885" y2="695" class="row-divider" />
+
+    <text x="671" y="711" class="key-fk">FK</text>
+    <text x="702" y="711" class="attr-fk">user_id</text>
+    <line x1="650" y1="717" x2="885" y2="717" class="row-divider" />
+
+    <text x="671" y="733" class="key-fk">FK</text>
+    <text x="702" y="733" class="attr-fk">quiz_id</text>
+    <line x1="650" y1="739" x2="885" y2="739" class="row-divider" />
+
+    <text x="702" y="755" class="attr-text">score</text>
+    <line x1="650" y1="761" x2="885" y2="761" class="row-divider" />
+
+    <text x="702" y="777" class="attr-text">total_questions</text>
+    <line x1="650" y1="783" x2="885" y2="783" class="row-divider" />
+
+    <text x="702" y="799" class="attr-text">percentage</text>
+    <line x1="650" y1="805" x2="885" y2="805" class="row-divider" />
+
+    <text x="702" y="821" class="attr-text">passed (boolean)</text>
+    <line x1="650" y1="827" x2="885" y2="827" class="row-divider" />
+
+    <text x="702" y="836" class="attr-text">adaptive_action_taken</text>
+  </g>
+
+  <!-- Connectors Col 3 -->
+  <line x1="767" y1="605" x2="767" y2="645" class="conn-line" marker-end="url(#arrow)" />
+
+
+  <!-- ================= COLUMN 4: PROGRESS & RECOMMENDATIONS ================= -->
+  <!-- LEARNING_PROGRESS TABLE [x: 975, y: 460, w: 245, h: 165] -->
+  <g id="tbl-progress" filter="url(#shadow)">
+    <rect x="975" y="460" width="245" height="165" class="tbl-box" />
+    <path d="M 975 460 L 1220 460 L 1220 486 L 975 486 Z" class="tbl-header" />
+    <text x="1097" y="478" class="header-text">LEARNING_PROGRESS</text>
+    <line x1="1020" y1="486" x2="1020" y2="625" class="col-divider" />
+
+    <text x="998" y="504" class="key-pk">PK</text>
+    <text x="1030" y="504" class="attr-pk">id</text>
+    <line x1="975" y1="510" x2="1220" y2="510" class="row-divider" />
+
+    <text x="998" y="525" class="key-fk">FK</text>
+    <text x="1030" y="525" class="attr-fk">user_id</text>
+    <line x1="975" y1="531" x2="1220" y2="531" class="row-divider" />
+
+    <text x="998" y="546" class="key-fk">FK</text>
+    <text x="1030" y="546" class="attr-fk">topic_id</text>
+    <line x1="975" y1="552" x2="1220" y2="552" class="row-divider" />
+
+    <text x="998" y="567" class="key-fk">FK</text>
+    <text x="1030" y="567" class="attr-fk">subtopic_id</text>
+    <line x1="975" y1="573" x2="1220" y2="573" class="row-divider" />
+
+    <text x="1030" y="588" class="attr-text">time_spent_minutes</text>
+    <line x1="975" y1="594" x2="1220" y2="594" class="row-divider" />
+
+    <text x="1030" y="608" class="attr-text">completion_percentage</text>
+    <line x1="975" y1="614" x2="1220" y2="614" class="row-divider" />
+
+    <text x="1030" y="621" class="attr-text">last_accessed</text>
+  </g>
+
+  <!-- RECOMMENDATIONS TABLE [x: 975, y: 665, w: 245, h: 180] -->
+  <g id="tbl-recommendations" filter="url(#shadow)">
+    <rect x="975" y="665" width="245" height="180" class="tbl-box" />
+    <path d="M 975 665 L 1220 665 L 1220 691 L 975 691 Z" class="tbl-header" />
+    <text x="1097" y="683" class="header-text">RECOMMENDATIONS</text>
+    <line x1="1020" y1="691" x2="1020" y2="845" class="col-divider" />
+
+    <text x="998" y="709" class="key-pk">PK</text>
+    <text x="1030" y="709" class="attr-pk">id</text>
+    <line x1="975" y1="715" x2="1220" y2="715" class="row-divider" />
+
+    <text x="998" y="731" class="key-fk">FK</text>
+    <text x="1030" y="731" class="attr-fk">user_id</text>
+    <line x1="975" y1="737" x2="1220" y2="737" class="row-divider" />
+
+    <text x="1030" y="753" class="attr-text">item_type (topic/quiz)</text>
+    <line x1="975" y1="759" x2="1220" y2="759" class="row-divider" />
+
+    <text x="1030" y="775" class="attr-text">item_title</text>
+    <line x1="975" y1="781" x2="1220" y2="781" class="row-divider" />
+
+    <text x="1030" y="797" class="attr-text">score (cosine sim)</text>
+    <line x1="975" y1="803" x2="1220" y2="803" class="row-divider" />
+
+    <text x="1030" y="819" class="attr-text">reasoning</text>
+    <line x1="975" y1="825" x2="1220" y2="825" class="row-divider" />
+
+    <text x="1030" y="839" class="attr-text">status (active/dismissed)</text>
+  </g>
+
+
+  <!-- ================= COLUMN 5: CONVERSATIONAL AI & VOICE ================= -->
+  <!-- CHAT_HISTORY TABLE [x: 1320, y: 460, w: 250, h: 165] -->
+  <g id="tbl-chat-history" filter="url(#shadow)">
+    <rect x="1320" y="460" width="250" height="165" class="tbl-box" />
+    <path d="M 1320 460 L 1570 460 L 1570 486 L 1320 486 Z" class="tbl-header" />
+    <text x="1445" y="478" class="header-text">CHAT_HISTORY</text>
+    <line x1="1365" y1="486" x2="1365" y2="625" class="col-divider" />
+
+    <text x="1342" y="504" class="key-pk">PK</text>
+    <text x="1375" y="504" class="attr-pk">id</text>
+    <line x1="1320" y1="510" x2="1570" y2="510" class="row-divider" />
+
+    <text x="1342" y="525" class="key-fk">FK</text>
+    <text x="1375" y="525" class="attr-fk">user_id</text>
+    <line x1="1320" y1="531" x2="1570" y2="531" class="row-divider" />
+
+    <text x="1375" y="546" class="attr-text">role (student/assistant)</text>
+    <line x1="1320" y1="552" x2="1570" y2="552" class="row-divider" />
+
+    <text x="1375" y="567" class="attr-text">message</text>
+    <line x1="1320" y1="573" x2="1570" y2="573" class="row-divider" />
+
+    <text x="1375" y="588" class="attr-text">context_topic_id</text>
+    <line x1="1320" y1="594" x2="1570" y2="594" class="row-divider" />
+
+    <text x="1375" y="608" class="attr-text">intent_detected</text>
+    <line x1="1320" y1="614" x2="1570" y2="614" class="row-divider" />
+
+    <text x="1375" y="621" class="attr-text">timestamp</text>
+  </g>
+
+  <!-- VOICE_INTERACTIONS TABLE [x: 1320, y: 665, w: 250, h: 165] -->
+  <g id="tbl-voice-interactions" filter="url(#shadow)">
+    <rect x="1320" y="665" width="250" height="165" class="tbl-box" />
+    <path d="M 1320 665 L 1570 665 L 1570 691 L 1320 691 Z" class="tbl-header" />
+    <text x="1445" y="683" class="header-text">VOICE_INTERACTIONS</text>
+    <line x1="1365" y1="691" x2="1365" y2="830" class="col-divider" />
+
+    <text x="1342" y="709" class="key-pk">PK</text>
+    <text x="1375" y="709" class="attr-pk">id</text>
+    <line x1="1320" y1="715" x2="1570" y2="715" class="row-divider" />
+
+    <text x="1342" y="730" class="key-fk">FK</text>
+    <text x="1375" y="730" class="attr-fk">user_id</text>
+    <line x1="1320" y1="736" x2="1570" y2="736" class="row-divider" />
+
+    <text x="1375" y="750" class="attr-text">transcribed_text</text>
+    <line x1="1320" y1="756" x2="1570" y2="756" class="row-divider" />
+
+    <text x="1375" y="769" class="attr-text">confidence</text>
+    <line x1="1320" y1="775" x2="1570" y2="775" class="row-divider" />
+
+    <text x="1375" y="788" class="attr-text">ai_response_text</text>
+    <line x1="1320" y1="794" x2="1570" y2="794" class="row-divider" />
+
+    <text x="1375" y="808" class="attr-text">audio_duration_seconds</text>
+    <line x1="1320" y1="814" x2="1570" y2="814" class="row-divider" />
+
+    <text x="1375" y="825" class="attr-text">created_at</text>
+  </g>
+
+  <!-- Connectors Col 5 -->
+  <line x1="1445" y1="625" x2="1445" y2="665" class="conn-line" marker-end="url(#arrow)" />
+
+  <!-- Footnote / Legend -->
+  <rect x="40" y="1060" width="1540" height="40" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" rx="4" />
+  <text x="60" y="1084" font-size="12px" fill="#475569" font-weight="bold">LEGEND &amp; CARDINALITIES:</text>
+  <text x="210" y="1084" font-size="12px" fill="#1e293b"><tspan font-weight="bold">PK</tspan> = Primary Key &nbsp;|&nbsp; <tspan font-weight="bold">FK</tspan> = Foreign Key &nbsp;|&nbsp; ──► = 1-to-Many / Foreign Key Reference &nbsp;|&nbsp; Top Tier = Curriculum &amp; DAG Generation Pipeline &nbsp;|&nbsp; Lower Tier = Modular AI Tracking Bus</text>
+</svg>
