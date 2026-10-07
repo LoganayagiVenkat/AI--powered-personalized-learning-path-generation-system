@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Micro Project Report - AI-Powered Personalized Learning Path Generation System</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 13pt;
+    line-height: 1.5;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  .page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    page-break-after: always;
+    border: 1px solid #ccc;
+    background: #fff;
+    min-height: 1060px;
+    position: relative;
+  }
+  @media print {
+    body {
+      background: none;
+    }
+    .page {
+      border: 1px solid #333;
+      margin: 0;
+      padding: 30px;
+      page-break-after: always;
+      min-height: 100vh;
+    }
+  }
+  h1, h2, h3, h4 {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+  }
+  h1 { font-size: 18pt; margin-bottom: 12px; }
+  h2 { font-size: 16pt; margin-bottom: 20px; }
+  h3 { font-size: 14pt; margin-bottom: 15px; }
+  h4 { font-size: 13pt; margin-bottom: 10px; text-align: left; }
+  p {
+    text-align: justify;
+    margin-bottom: 14px;
+    text-indent: 0;
+  }
+  .bold { font-weight: bold; }
+  .center { text-align: center; }
+  ul, ol {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-left: 28px;
+  }
+  li {
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  th, td {
+    border: 1px solid #000;
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 11pt;
+  }
+  th {
+    font-weight: bold;
+  }
+  pre {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .diagram-box {
+    border: 1.5px solid #2b4c7e;
+    background-color: #f4f7fb;
+    padding: 16px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 9.5pt;
+  }
+  .screenshot-placeholder {
+    border: 2px dashed #888;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 25px 15px;
+    text-align: center;
+    margin: 18px 0;
+  }
+  .footer-table {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    right: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: TITLE PAGE -->
+<div class="page">
+  <div style="height: 60px;"></div>
+  <h1>AI-Powered Personalized Learning Path Generation System</h1>
+  <div style="height: 25px;"></div>
+  <h3>23CS55C - ARTIFICIAL INTELLIGENCE</h3>
+  <div style="height: 15px;"></div>
+  <h2>MICRO PROJECT REPORT</h2>
+  <div style="height: 50px;"></div>
+  <p class="center bold" style="font-size: 13pt;">Submitted by</p>
+  <div style="height: 15px;"></div>
+  <p class="center bold" style="line-height: 1.8; font-size: 12pt;">
+    JEYAKIRTHIKA V &nbsp;-&nbsp; 2312015<br>
+    STUDENT NAME 2 &nbsp;-&nbsp; 23120XX<br>
+    STUDENT NAME 3 &nbsp;-&nbsp; 23120XX
+  </p>
+  <div style="height: 90px;"></div>
+  <p style="font-size: 13pt; font-weight: bold;">Course Instructor</p>
+  
+  <div class="footer-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Innovation and Problem statement<br>(10 Marks)</th>
+          <th>Implementation & Results<br>(10 Marks)</th>
+          <th>Presentation and Documentation<br>(10 Marks)</th>
+          <th>Viva<br>(10 Marks)</th>
+          <th>Total<br>(40 Marks)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height: 48px;">
+          <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE 2: TABLE OF CONTENTS -->
+<div class="page">
+  <div style="height: 40px;"></div>
+  <h2>TABLE OF CONTENTS</h2>
+  <div style="height: 20px;"></div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">CH NO</th>
+        <th style="width: 65%; text-align: left; padding-left: 20px;">TITLE</th>
+        <th style="width: 20%;">PAGE NO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td style="text-align: left; padding-left: 20px;">INTRODUCTION</td><td>3</td></tr>
+      <tr><td>2</td><td style="text-align: left; padding-left: 20px;">PROBLEM STATEMENT</td><td>4</td></tr>
+      <tr><td>3</td><td style="text-align: left; padding-left: 20px;">MODULE DESCRIPTION</td><td>5</td></tr>
+      <tr><td>4</td><td style="text-align: left; padding-left: 20px;">ARCHITECTURE DIAGRAM</td><td>7</td></tr>
+      <tr><td>5</td><td style="text-align: left; padding-left: 20px;">CODING & IMPLEMENTATION</td><td>10</td></tr>
+      <tr><td>6</td><td style="text-align: left; padding-left: 20px;">OUTPUT SCREENSHOTS</td><td>20</td></tr>
+      <tr><td>7</td><td style="text-align: left; padding-left: 20px;">CONCLUSION</td><td>22</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PAGE 3: CHAPTER 1 INTRODUCTION -->
+<div class="page">
+  <h2>CHAPTER 1</h2>
+  <h3>INTRODUCTION</h3>
+  <p>
+    In today's fast-paced digital and technological environment, traditional educational paradigms have long relied on one-size-fits-all curricula that fail to accommodate individual student proficiencies, diverse learning speeds, and evolving industry standards. With the exponential emergence of technical domains such as Artificial Intelligence, Data Science, Machine Learning, and Cloud-Native Software Engineering, learners frequently encounter fragmented materials, redundant introductory content, and unclear prerequisite dependencies. This capstone micro project addresses this critical challenge by engineering an <strong>AI-Powered Personalized Learning Path Generation System</strong> that dynamically synthesizes custom, mastery-based academic roadmaps tailored to each student's career aspirations and foundational knowledge.
+  </p>
+  <p class="bold" style="font-size: 13pt; margin-top: 25px;">The Gap:</p>
+  <p>
+    Conventional Learning Management Systems (LMS) and online course catalogs deliver rigid, linear syllabi that do not adapt to individual learning needs. Students are forced to traverse predefined modules regardless of whether they have already mastered foundational concepts or lack crucial prerequisites. Furthermore, these platforms lack automated diagnostic mechanisms to identify precise technical skill gaps against target career roles (such as AI/ML Engineer, Data Scientist, or Full-Stack Developer). When students struggle or fail assessments, standard systems offer no automated remedial feedback loop, leading to cognitive fatigue, knowledge voids, and high dropout rates.
+  </p>
+  <p class="bold" style="font-size: 13pt; margin-top: 25px;">The Goal :</p>
+  <p>
+    The primary objective of this project is to develop an end-to-end, intelligent learning ecosystem that leverages Natural Language Processing (NLP), Directed Acyclic Graph (DAG) topological sequencing, machine learning-driven risk prediction, and automated adaptive feedback. The system evaluates a learner's baseline proficiency through diagnostic benchmarking, computes numerical skill gaps against career benchmark vectors, and synthesizes an optimal prerequisite-respecting curriculum via Kahn's Topological Sort algorithm. In addition, the platform features dynamic quiz-driven remediation, context-aware AI tutoring, and hands-free voice interaction to deliver an adaptive, interactive, and personalized educational journey.
+  </p>
+</div>
+
+<!-- PAGE 4: CHAPTER 2 PROBLEM STATEMENT -->
+<div class="page">
+  <h2>CHAPTER 2</h2>
+  <h3>PROBLEM STATEMENT</h3>
+  <p>
+    Online education and technical upskilling platforms have become primary avenues for higher education and workforce preparation. However, students and early-career engineers frequently encounter substantial friction in navigating dense, unstructured technical curricula. The core problem lies in the absence of adaptive intelligence in traditional curricula design: learners are treated as homogenous cohorts, receiving identical course paths regardless of varying competencies, background knowledge, and specific target career outcomes.
+  </p>
+  <p>This deficiency manifests in several critical areas:</p>
+  <ul>
+    <li><strong>Rigid and Linear Progression Bottlenecks:</strong> Standard e-learning systems sequence topics chronologically rather than dependency-wise. Students often encounter advanced algorithmic or mathematical concepts without first mastering essential prerequisites (e.g., attempting Deep Neural Networks without understanding Linear Algebra or Gradient Descent), leading to severe cognitive overload.</li>
+    <li><strong>Absence of Granular Skill-Gap Quantification:</strong> Existing platforms lack automated diagnostic tools to objectively measure a student's current proficiency vector against real-world target career requirements. Learners cannot pinpoint exactly which skills are critical, moderate, or already met.</li>
+    <li><strong>Lack of Dynamic Remediation and Feedback Loops:</strong> In traditional LMS architectures, failing a module test merely yields a numerical score without re-engineering the curriculum. There is no automated mechanism to dynamically insert remedial exercises, reinforce prerequisite concepts, or adjust pacing in real time.</li>
+    <li><strong>Inflexible Static Pacing and Missing Tutoring Support:</strong> Students learn at varying velocities, yet static curricula cannot dynamically predict completion timelines or identify high-risk modules. Moreover, without interactive tutoring, students facing conceptual bottlenecks are left without immediate guidance.</li>
+  </ul>
+  <p>
+    The consequences are profound: suboptimal learning efficiency, knowledge retention deficits, frustration, and demotivation. In an era where data-driven adaptation is paramount, education must shift from static delivery to dynamic personalization. This project bridges this divide by developing an AI-driven educational engineering platform that dynamically analyzes student skill gaps, constructs dependency-validated DAG roadmaps, and provides automated remedial adaptation and interactive tutoring.
+  </p>
+</div>
+
+<!-- PAGE 5: CHAPTER 3 MODULE DESCRIPTION -->
+<div class="page">
+  <h2>CHAPTER 3</h2>
+  <h3>MODULE DESCRIPTION</h3>
+  <p>
+    The AI-Powered Personalized Learning Path Generation System is structured into six key modules, each handling a specific dimension of the educational pipeline. These modules work collaboratively to transform raw learner diagnostic profiles into an adaptive, dependency-validated learning journey:
+  </p>
+  <p>
+    The <strong>Student Profiling and Diagnostic Assessment Module</strong> captures user career objectives, baseline self-ratings, and diagnostic test responses to construct a multi-dimensional student competency profile.
+  </p>
+  <p>
+    The <strong>NLP and Curriculum Extraction Module</strong> leverages TF-IDF token vectorization and cosine similarity to extract semantic keywords from curriculum topic catalogs and align them mathematically with student goals.
+  </p>
+  <p>
+    The <strong>Skill-Gap Analysis and Vector Distance Engine</strong> compares student proficiency vectors against career benchmark requirements, computing weighted distance scores to identify Critical, Moderate, and Met skill levels.
+  </p>
+  <p>
+    The <strong>DAG-Based Learning Path Generation and Remediation Module</strong> formulates curriculum topics as a Directed Acyclic Graph (DAG) and executes Kahn's Topological Sort algorithm to guarantee that all prerequisite dependencies are satisfied in optimal pedagogical order. It also includes dynamic quiz remediation to inject refresher content upon assessment failure.
+  </p>
+  <p>
+    The <strong>Interactive Assessment and Mastery Tracking Module</strong> delivers timed module quizzes, tracks concept retention, awards continuous learning streaks, and logs completion analytics to keep learners engaged.
+  </p>
+  <p>
+    Finally, the <strong>Intelligent Tutoring Chatbot and Voice Assistant Module</strong> features an NLP-driven conversational agent with intent classification alongside Google Speech Recognition and gTTS audio synthesis for natural, hands-free voice interaction.
+  </p>
+  
+  <h4 style="margin-top: 25px;">Architectural Foundation:</h4>
+  <p>
+    The AI-Powered Personalized Learning Path Generation System is built upon a high-performance, modular full-stack architecture. The frontend is engineered with React 18 and Vite, utilizing Lucide React icons, Recharts for radar and progress analytics, and the HTML5 Web Speech API. The backend is powered by Python Flask structured with modular blueprints. Data persistence is managed via SQLAlchemy ORM supporting MySQL with an automated zero-configuration SQLite fallback (<code>learning_path.db</code>). Core AI and machine learning tasks utilize scikit-learn (TF-IDF vectorizer, Cosine Similarity, K-Means clustering, Random Forest performance prediction), graph algorithms via Python collections, and audio pipelines powered by SpeechRecognition and gTTS.
+  </p>
+</div>
+
+<!-- PAGE 6: FUNCTIONAL MODULES & OPERATIONAL FLOW -->
+<div class="page">
+  <h4 style="margin-top: 10px;">Functional Modules:</h4>
+  <p>The system comprises several interconnected functional modules:</p>
+  <ul>
+    <li><strong>Student Profiling and Diagnostic Assessment Module:</strong> Collects student career goals (e.g., Data Scientist, AI/ML Engineer, Full Stack Developer), processes baseline diagnostic tests, and stores verified proficiency ratings across technical domains.</li>
+    <li><strong>NLP and Curriculum Extraction Module:</strong> Tokenizes and cleans course syllabi, removes stop words, generates unigram and bigram TF-IDF feature matrices, and computes semantic alignment with student query profiles.</li>
+    <li><strong>Skill-Gap Analysis Module:</strong> Computes weighted Euclidean-style gap distances against industry-benchmarked career skill sets, classifying each skill into Critical, Moderate, or Met status, and suggests corresponding courses.</li>
+    <li><strong>DAG Topological Sequencing Module:</strong> Constructs prerequisite dependency adjacency lists and computes in-degrees for each topic. Executes Kahn's algorithm to resolve topic ordering, prioritizing foundational concepts and addressing weak areas first.</li>
+    <li><strong>Adaptive Remediation Engine:</strong> Dynamically intercepts quiz evaluation results; if a student scores below 60%, the system flags the topic for remedial review and attaches supplementary exercises. Scores of 85% or higher trigger mastery acceleration.</li>
+    <li><strong>Intelligent Tutoring Chatbot & Voice Assistant:</strong> Implements multi-intent classification (<code>why_recommended</code>, <code>next_topic</code>, <code>concept_explanation</code>, <code>skill_gaps</code>, <code>career_guidance</code>), delivering contextual academic tutoring via chat and voice.</li>
+  </ul>
+
+  <h4 style="margin-top: 25px;">Operational Flow:</h4>
+  <p>
+    The operational flow commences when a student registers and selects a target career goal. The student undertakes an initial diagnostic benchmark assessment that establishes their baseline proficiency. The NLP engine calculates TF-IDF representations of all topics and matches them against the student's profile. The DAG Topological Sort sequences the curriculum based on prerequisite dependencies, while the Random Forest predictor projects topic difficulty and pass probabilities. As the student engages with learning content and completes mastery quizzes, the system dynamically updates progress, recalibrating the path and providing remedial assistance when needed, supported continuously by the AI tutoring chatbot and voice assistant.
+  </p>
+</div>
+
+<!-- PAGE 7: CHAPTER 4 ARCHITECTURAL DIAGRAM -->
+<div class="page">
+  <h2>CHAPTER 4</h2>
+  <h3>ARCHITECTURAL DIAGRAM</h3>
+  <h4 style="margin-top: 15px;">4.1 Overview:</h4>
+  <p>
+    The architecture of the AI-Powered Personalized Learning Path Generation System follows a modular, layered design that separates data processing, AI reasoning, analytics computation, and user interaction. This ensures scalability, maintainability, and ease of updates. The system is built entirely with open-source technologies and runs locally, eliminating dependency on cloud services for core functionality.
+  </p>
+  <h4 style="margin-top: 20px;">4.2 Architectural Diagram :</h4>
+  <div class="diagram-box">
+<pre style="background: none; border: none; padding: 0; margin: 0; font-size: 10pt;">
++-------------------------------------------------------------------------+
+|                          User Interface Layer                           |
+|      [ React 18 SPA ]  [ Recharts Analytics ]  [ Web Speech Voice UI ]  |
++------------------------------------+------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                           Application Layer                             |
+|      [ Flask REST API ] -> Blueprints (Auth, Path, Quiz, Chatbot, etc.) |
++------------------------------------+------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                           Processing Layer                              |
+|  +--------------------+  +--------------------+  +-------------------+  |
+|  |   DAG Topological  |  |  TF-IDF & Cosine   |  | Skill-Gap Vector  |  |
+|  |     Sequencing     |  |   NLP Matcher      |  |     Analyzer      |  |
+|  +--------------------+  +--------------------+  +-------------------+  |
+|  +--------------------+  +--------------------+  +-------------------+  |
+|  | Adaptive Remedial  |  | Chatbot Intent     |  | Random Forest ML  |  |
+|  |   Quiz Engine      |  | Classifier & Audio |  | Predictor Engine  |  |
+|  +--------------------+  +--------------------+  +-------------------+  |
++------------------------------------+------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                              Data Layer                                 |
+|    [ Users & Profiles ]  [ Career & Skills ]  [ Topics & DAG Prereqs ]   |
+|               [ SQLite / MySQL with SQLAlchemy ORM ]                    |
++------------------------------------+------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                         Infrastructure Layer                            |
+|    [ Python 3.x Runtime ]  [ scikit-learn / NumPy ]  [ Speech & gTTS ]  |
++-------------------------------------------------------------------------+
+</pre>
+  </div>
+</div>
+
+<!-- PAGE 8: 4.3 LAYER DESCRIPTIONS -->
+<div class="page">
+  <h4>4.3 Layer Descriptions</h4>
+
+  <h4 style="margin-top: 15px; font-size: 12pt;">4.3.1 User Interface Layer</h4>
+  <ul>
+    <li><strong>Component:</strong> React 18 web interface built with Vite</li>
+    <li><strong>Functionality:</strong> Provides interactive dashboard, dynamic DAG roadmap visualizations, skill-gap radar charts, quiz evaluation modals, and floating voice assistant</li>
+    <li><strong>Technology:</strong> React.js, Tailwind/Vanilla CSS, Lucide Icons, Recharts</li>
+    <li><strong>Purpose:</strong> Enables students to interact with personalized curricula and track performance effortlessly</li>
+  </ul>
+
+  <h4 style="margin-top: 15px; font-size: 12pt;">4.3.2 Application Layer</h4>
+  <ul>
+    <li><strong>Component:</strong> Flask REST API routing layer</li>
+    <li><strong>Functionality:</strong> Coordinates user requests, executes session validation, routes data between client and AI services</li>
+    <li><strong>Technology:</strong> Python Flask, Flask-CORS, Modular Blueprints</li>
+    <li><strong>Purpose:</strong> Serves as the central API gateway and controller for educational operations</li>
+  </ul>
+
+  <h4 style="margin-top: 15px; font-size: 12pt;">4.3.3 Processing Layer</h4>
+  <ul>
+    <li><strong>Component:</strong> AI Reasoning, Graph Sequencing, and Adaptive Engine</li>
+    <li><strong>Functionality:</strong>
+      <ul>
+        <li><em>DAG Sequencing:</em> Resolves curriculum dependencies and generates topological order</li>
+        <li><em>NLP Engine:</em> Evaluates semantic relevance via TF-IDF token matrices</li>
+        <li><em>Skill Gap Engine:</em> Computes distance from target career profiles</li>
+      </ul>
+    </li>
+    <li><strong>Technology:</strong> scikit-learn, NumPy, NLTK, Python Graph Collections</li>
+    <li><strong>Purpose:</strong> Performs core AI reasoning and dynamic curriculum synthesis</li>
+  </ul>
+
+  <h4 style="margin-top: 15px; font-size: 12pt;">4.3.4 Data Layer</h4>
+  <ul>
+    <li><strong>Component:</strong> Relational Database Models & Store</li>
+    <li><strong>Functionality:</strong> Stores user records, career goals, skills, topics, prerequisite links, and generated paths</li>
+    <li><strong>Technology:</strong> SQLAlchemy ORM, SQLite (<code>learning_path.db</code>), MySQL</li>
+    <li><strong>Purpose:</strong> Provides persistent, relational storage for student academic history</li>
+  </ul>
+
+  <h4 style="margin-top: 15px; font-size: 12pt;">4.3.5 Infrastructure Layer</h4>
+  <ul>
+    <li><strong>Component:</strong> AI Runtimes, Audio Models, and Math Engines</li>
+    <li><strong>Functionality:</strong> Executes vector mathematics, speech recognition, and audio synthesis</li>
+    <li><strong>Technology:</strong> Python 3.x, SpeechRecognition, Google Text-to-Speech (gTTS)</li>
+    <li><strong>Purpose:</strong> Supplies foundational computational and speech processing capabilities</li>
+  </ul>
+</div>
+
+<!-- PAGE 9: DATA FLOW & DESIGN DECISIONS -->
+<div class="page">
+  <h4>4.4 Data Flow</h4>
+  <ol>
+    <li>User logs in and selects target career goal via React user interface.</li>
+    <li>Application layer requests diagnostic assessment and routes baseline scores to processing layer.</li>
+    <li>TF-IDF & Cosine Similarity vectorize topic catalog and align them with the student query.</li>
+    <li>Kahn's Topological Sort orders topics strictly according to prerequisite constraints.</li>
+    <li>Random Forest predictor computes pacing advice and pass probability for each module.</li>
+    <li>Mastery quiz submissions dynamically trigger remediation or fast-tracking updates.</li>
+    <li>Interactive progress, charts, and voice explanations are rendered in real time.</li>
+  </ol>
+
+  <h4 style="margin-top: 25px;">4.5 Key Design Decisions</h4>
+  <ul>
+    <li><strong>DAG-Based Dependency Resolution:</strong> Modeling course topics as a Directed Acyclic Graph prevents circular learning traps and guarantees foundational topics are completed before advanced material.</li>
+    <li><strong>Local & Deterministic Algorithm Execution:</strong> Core sequencing runs via deterministic graph theory and local scikit-learn models, guaranteeing zero API latency and complete student privacy.</li>
+    <li><strong>Dual Database Portability:</strong> Implements zero-configuration SQLite fallback if MySQL is unreachable, making testing and deployment instantaneous across environments.</li>
+    <li><strong>Explainable AI Recommendations:</strong> Every roadmap topic provides explicit, student-readable justification strings explaining prerequisite fulfillment and career alignment.</li>
+    <li><strong>Multimodal Learning Modality:</strong> Unifies visual charts, structured interactive text, conversational chatbot assistance, and speech audio synthesis.</li>
+  </ul>
+</div>
+
+<!-- PAGE 10: CHAPTER 5 CODING & IMPLEMENTATION -->
+<div class="page">
+  <h2>CHAPTER 5</h2>
+  <h3>CODING AND IMPLEMENTATION</h3>
+  <h4>5.1 Introduction</h4>
+  <p>
+    This chapter details the coding and implementation of the AI-Powered Personalized Learning Path Generation System. The system is built using Python with Flask, scikit-learn, and SQLAlchemy on the backend, complemented by a modern React.js frontend. The codebase follows clean software engineering principles, maintaining strict separation between data persistence, AI algorithms, API routing, and user interface components.
+  </p>
+  <h4>5.2 Coding</h4>
+  <p>The core implementation consists of several Python modules and React components. Below are the key code snippets from the main files.</p>
+  
+  <h4>5.2.1 Learning Path Generator & DAG Sequencing (<code>backend/ai/learning_path.py</code>):</h4>
+  <pre>
+import json
+from collections import defaultdict, deque
+from sqlalchemy.orm import Session
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from backend.models.models import User, StudentProfile, CareerGoal, Topic, Prerequisite, LearningPath, LearningPathTopic
+
+def generate_personalized_learning_path(db: Session, user_id: int) -> dict:
+    profile = db.query(StudentProfile).filter(StudentProfile.user_id == user_id).first()
+    career_goal = db.query(CareerGoal).filter(CareerGoal.id == profile.career_goal_id).first() if profile else db.query(CareerGoal).first()
+    all_topics = db.query(Topic).all()
+
+    # TF-IDF & Cosine Similarity Content Matching
+    topic_corpus = [f"{t.title} {t.category} {t.description}" for t in all_topics]
+    student_query = f"{career_goal.target_role} {career_goal.title} {career_goal.description}"
+    vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
+    tfidf_matrix = vectorizer.fit_transform(topic_corpus + [student_query])
+    cos_similarities = cosine_similarity(tfidf_matrix[-1:], tfidf_matrix[:-1])[0]
+    similarity_map = {all_topics[i].id: float(cos_similarities[i]) for i in range(len(all_topics))}
+
+    # Build DAG Adjacency List & In-Degrees
+    prereq_records = db.query(Prerequisite).all()
+    adj = defaultdict(list)
+    in_degree = defaultdict(int)
+    for pr in prereq_records:
+        adj[pr.prerequisite_topic_id].append(pr.topic_id)
+        in_degree[pr.topic_id] += 1
+
+    # Kahn's Topological Sort
+    queue = deque([t.id for t in all_topics if in_degree[t.id] == 0])
+    ordered_topic_ids = []
+    while queue:
+        curr_id = queue.popleft()
+        ordered_topic_ids.append(curr_id)
+        for dependent_id in adj[curr_id]:
+            in_degree[dependent_id] -= 1
+            if in_degree[dependent_id] == 0:
+                queue.append(dependent_id)
+
+    return {"status": "success", "total_topics": len(ordered_topic_ids), "ordered_ids": ordered_topic_ids}
+  </pre>
+</div>
+
+<!-- PAGE 11: SKILL GAP & NLP CODE -->
+<div class="page">
+  <h4>5.2.2 Skill Gap Analysis Engine (<code>backend/ai/skill_gap.py</code>):</h4>
+  <pre>
+import json
+from sqlalchemy.orm import Session
+from backend.models.models import StudentProfile, CareerGoal, Skill, StudentSkill, Topic, SkillGap
+
+LEVEL_MAP = {"none": 0, "beginner": 1, "intermediate": 2, "advanced": 3}
+
+def analyze_student_skill_gaps(db: Session, user_id: int) -> dict:
+    profile = db.query(StudentProfile).filter(StudentProfile.user_id == user_id).first()
+    career_goal = db.query(CareerGoal).filter(CareerGoal.id == profile.career_goal_id).first()
+    required_skills = json.loads(career_goal.required_skills_json or "[]")
+    
+    student_skills_records = db.query(StudentSkill).filter(StudentSkill.user_id == user_id).all()
+    user_skill_levels = {ss.skill.name.lower(): ss.current_level for ss in student_skills_records if ss.skill}
+
+    gaps_result = []
+    total_required = 0
+    total_earned = 0
+
+    for item in required_skills:
+        skill_name = item.get("skill_name", "")
+        req_val = LEVEL_MAP.get(item.get("required_level", "Intermediate").lower(), 2)
+        curr_val = LEVEL_MAP.get(user_skill_levels.get(skill_name.lower(), "Beginner").lower(), 1)
+        gap_diff = req_val - curr_val
+        
+        status = "Critical" if gap_diff >= 2 else "Moderate" if gap_diff == 1 else "Met"
+        total_required += req_val
+        total_earned += min(curr_val, req_val)
+
+        gaps_result.append({
+            "skill_name": skill_name,
+            "required_val": req_val,
+            "current_val": curr_val,
+            "gap_status": status
+        })
+
+    readiness = round((total_earned / max(total_required, 1)) * 100, 1)
+    return {"target_career": career_goal.title, "readiness_percentage": readiness, "gaps": gaps_result}
+  </pre>
+
+  <h4>5.2.3 NLP Intent Classifier (<code>backend/ai/nlp.py</code>):</h4>
+  <pre>
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+def parse_chatbot_intent(query: str) -> dict:
+    q = query.lower()
+    if any(k in q for k in ["why recommend", "why did you suggest"]):
+        return {"intent": "why_recommended", "confidence": 0.92}
+    if any(k in q for k in ["what should i learn next", "next topic"]):
+        return {"intent": "next_topic", "confidence": 0.89}
+    if any(k in q for k in ["explain", "what is", "how does"]):
+        return {"intent": "concept_explanation", "confidence": 0.90}
+    if any(k in q for k in ["weak", "gap", "struggling"]):
+        return {"intent": "skill_gaps", "confidence": 0.88}
+    return {"intent": "general_tutoring", "confidence": 0.75}
+  </pre>
+</div>
+
+<!-- PAGE 12: VOICE & ADAPTIVE QUIZ CODE -->
+<div class="page">
+  <h4>5.2.4 Adaptive Quiz Interceptor (<code>backend/ai/learning_path.py</code>):</h4>
+  <pre>
+def adapt_learning_path_on_quiz(db: Session, user_id: int, quiz_id: int, percentage: float, topic_id: int) -> dict:
+    path = db.query(LearningPath).filter(LearningPath.user_id == user_id).first()
+    current_lpt = db.query(LearningPathTopic).filter(
+        LearningPathTopic.learning_path_id == path.id,
+        LearningPathTopic.topic_id == topic_id
+    ).first()
+
+    if current_lpt:
+        current_lpt.score = percentage
+        if percentage < 60.0:
+            current_lpt.status = "review_needed"
+            current_lpt.is_adaptive_addition = True
+            action = f"Adaptive Remediation: Scored {percentage}%. Added review exercises."
+        else:
+            current_lpt.status = "completed"
+            action = f"Mastery Achieved: Scored {percentage}%. Unlocked downstream modules."
+        db.commit()
+    return {"action": action, "topic_id": topic_id, "score": percentage}
+  </pre>
+
+  <h4>5.2.5 Speech Recognition Pipeline (<code>backend/voice/speech_to_text.py</code>):</h4>
+  <pre>
+import io
+import speech_recognition as sr
+
+def transcribe_audio_bytes(audio_bytes: bytes) -> dict:
+    recognizer = sr.Recognizer()
+    try:
+        audio_file = io.BytesIO(audio_bytes)
+        with sr.AudioFile(audio_file) as source:
+            recognizer.adjust_for_ambient_noise(source, duration=0.2)
+            audio_data = recognizer.record(source)
+        text = recognizer.recognize_google(audio_data)
+        return {"success": True, "text": text}
+    except sr.UnknownValueError:
+        return {"success": False, "error": "Speech was unintelligible"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+  </pre>
+</div>
+
+<!-- PAGE 13: CODE STRUCTURE -->
+<div class="page">
+  <h4>5.3 Code Structure:</h4>
+  <pre>
+d:/ainlp/
+├── backend/
+│   ├── ai/
+│   │   ├── chatbot.py            # AI Chatbot with intent classification
+│   │   ├── clustering.py         # K-Means learner clustering
+│   │   ├── learning_path.py      # DAG Topological Sort & path generation
+│   │   ├── nlp.py                # TF-IDF & Cosine similarity extraction
+│   │   ├── predictor.py          # Random Forest score & timeline predictor
+│   │   ├── recommendation.py     # Content-based & collaborative filtering
+│   │   └── skill_gap.py          # Skill matrix distance & gap calculation
+│   ├── database/
+│   │   ├── db.py                 # SQLAlchemy connection with MySQL/SQLite fallback
+│   │   ├── learning_path.db      # Local SQLite persistent store
+│   │   └── seed_data.py          # Pre-populated careers, skills, topics & quizzes
+│   ├── models/
+│   │   └── models.py             # Declarative ORM models (Users, Paths, Quizzes)
+│   ├── routes/
+│   │   ├── auth_routes.py        # /api/register & /api/login
+│   │   ├── profile_routes.py     # /api/profile (GET & PUT)
+│   │   ├── assessment_routes.py  # Initial diagnostic skill evaluation
+│   │   ├── learning_path_routes.py # Personalized DAG roadmap & re-generation
+│   │   ├── quiz_routes.py        # Module mastery quizzes & grading
+│   │   ├── progress_routes.py    # Time, completions, streak tracking
+│   │   ├── skill_gap_routes.py   # Numerical skill gap breakdown
+│   │   ├── recommendation_routes.py # AI personalized recommendations
+│   │   ├── chatbot_routes.py     # Context-aware educational chatbot
+│   │   └── voice_routes.py       # Speech-to-Text & Text-to-Speech pipeline
+│   ├── voice/
+│   │   ├── speech_to_text.py     # Audio decoding & speech recognition
+│   │   └── text_to_speech.py     # Base64 audio synthesis
+│   ├── app.py                    # Flask application entry point
+│   ├── requirements.txt          # Python dependencies
+│   └── test_api.py               # Automated end-to-end REST test suite
+├── database/
+│   └── schema.sql                # Complete MySQL DDL schema
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── FloatingVoiceModal.jsx # Live voice assistant popup
+│   │   │   ├── Header.jsx        # Navigation header & user status
+│   │   │   └── Sidebar.jsx       # Tab routing sidebar
+│   │   ├── pages/
+│   │   │   ├── DashboardPage.jsx # Analytics, streak, radar, active path
+│   │   │   ├── LearningPathPage.jsx # Interactive DAG timeline & filters
+│   │   │   ├── SkillAssessmentPage.jsx # Diagnostic benchmark test
+│   │   │   ├── SkillGapPage.jsx  # Radar & bar charts of missing skills
+│   │   │   ├── TopicsListPage.jsx # Catalog of all courses & topics
+│   │   │   ├── TopicLearningPage.jsx # Markdown reader & practice
+│   │   │   ├── QuizPage.jsx      # Timed quiz with immediate evaluation
+│   │   │   ├── ProgressTrackingPage.jsx # Learning stats & milestones
+│   │   │   ├── RecommendationsPage.jsx # AI-curated electives
+│   │   │   ├── ChatbotPage.jsx   # Dedicated tutoring chat assistant
+│   │   │   └── ProfilePage.jsx   # Career goal & skill level editor
+│   │   ├── services/
+│   │   │   └── api.js            # Axios/Fetch client with auth headers
+│   │   ├── App.jsx               # Main container with tab-based routing
+│   │   └── index.css             # Glassmorphic, modern design system
+│   ├── package.json
+│   └── vite.config.js
+├── start_all.bat                 # One-click launch for Windows
+├── start_backend.bat             # Launch Python Flask server
+└── start_frontend.bat            # Launch React Vite dev server
+  </pre>
+</div>
+
+<!-- PAGE 14: VS CODE SCREENSHOTS & IMPLEMENTATION -->
+<div class="page">
+  <h4>5.4 VS Code Screenshots:</h4>
+  <p>Key backend and frontend source files inspected during implementation:</p>
+  <ul>
+    <li><strong>i) learning_path.py:</strong> Implementation of Kahn's topological sort and adaptive remediation logic.</li>
+    <li><strong>ii) skill_gap.py:</strong> Numerical vector distance calculation comparing student ratings against target job profiles.</li>
+    <li><strong>iii) nlp.py:</strong> Stop-word removal, TF-IDF vectorizer configuration, and multi-intent parsing rules.</li>
+    <li><strong>iv) LearningPathPage.jsx:</strong> Interactive DAG node rendering with collapsible prerequisite tags and progress badges.</li>
+  </ul>
+
+  <h4 style="margin-top: 25px;">5.5 Implementation Details:</h4>
+  <ul>
+    <li>
+      <strong>Environment Setup:</strong> Backend dependencies installed via:
+      <pre>pip install flask flask-cors sqlalchemy scikit-learn numpy nltk speechrecognition gtts werkzeug</pre>
+      Frontend dependencies installed via:
+      <pre>cd frontend && npm install</pre>
+    </li>
+    <li>
+      <strong>Data Preparation & Seeding:</strong> Database seeded with industry career profiles, topic graph relations, diagnostic questions, and mastery quizzes using:
+      <pre>python -c "from backend.database.seed_data import seed_database; seed_database()"</pre>
+    </li>
+    <li>
+      <strong>Running the Application:</strong> Launching both servers concurrently via the one-click startup script:
+      <pre>start_all.bat</pre>
+      (Backend available on <code>http://localhost:5000</code>, Frontend on <code>http://localhost:5173</code>)
+    </li>
+    <li>
+      <strong>Automated Verification:</strong> Validating all API routes and algorithmic engines:
+      <pre>python backend/test_api.py</pre>
+    </li>
+  </ul>
+</div>
+
+<!-- PAGE 15: CHAPTER 6 OUTPUT SCREENSHOTS -->
+<div class="page">
+  <h2>CHAPTER 6</h2>
+  <h3>OUTPUT SCREENSHOTS</h3>
+  
+  <div class="screenshot-placeholder">
+    <p class="bold">Figure 6.1: Student Analytics Dashboard</p>
+    <p style="font-size: 10pt; color: #555;">[ Visual representation of student progress dashboard showing active path completion %, streak count, upcoming modules, and the Recharts radar chart mapping technical competencies ]</p>
+  </div>
+
+  <div class="screenshot-placeholder">
+    <p class="bold">Figure 6.2: Dynamic DAG Personalized Learning Roadmap</p>
+    <p style="font-size: 10pt; color: #555;">[ Visual display of topologically sorted curriculum nodes with prerequisite indicators, difficulty tags, estimated completion hours, and AI rationale banners ]</p>
+  </div>
+</div>
+
+<!-- PAGE 16: OUTPUT SCREENSHOTS CONTINUED -->
+<div class="page">
+  <div class="screenshot-placeholder">
+    <p class="bold">Figure 6.3: Skill-Gap Analysis & Readiness Visualizer</p>
+    <p style="font-size: 10pt; color: #555;">[ Visual representation of skill breakdown comparing current student skill levels against target role requirements with Critical, Moderate, and Met badges ]</p>
+  </div>
+
+  <div class="screenshot-placeholder">
+    <p class="bold">Figure 6.4: Interactive Topic Reader & Mastery Quiz Interface</p>
+    <p style="font-size: 10pt; color: #555;">[ Visual display of interactive topic content, code examples, followed by a timed multiple-choice mastery quiz with real-time scoring and remediation alerts ]</p>
+  </div>
+
+  <div class="screenshot-placeholder">
+    <p class="bold">Figure 6.5: Intelligent AI Tutoring Chatbot & Voice Assistant Modal</p>
+    <p style="font-size: 10pt; color: #555;">[ Visual interface showing the AI tutoring chatbot explaining complex concepts and the floating voice assistant modal providing hands-free queries ]</p>
+  </div>
+</div>
+
+<!-- PAGE 17: CHAPTER 7 CONCLUSION -->
+<div class="page">
+  <h2>CHAPTER 7</h2>
+  <h3>CONCLUSION</h3>
+  <h4>7.1 Summary of the Project:</h4>
+  <p>
+    The <strong>AI-Powered Personalized Learning Path Generation System</strong> has been successfully designed, implemented, and validated as an end-to-end educational engineering solution. By combining Natural Language Processing (TF-IDF and Cosine Similarity), Directed Acyclic Graph (DAG) topological sequencing, machine learning-driven risk forecasting, and adaptive remediation, the platform provides personalized, prerequisite-respecting learning pathways that adapt to individual learner needs.
+  </p>
+  <p>Key achievements include:</p>
+  <ul>
+    <li>Development of a robust DAG-based topological sequencing engine that eliminates circular dependencies and respects curriculum prerequisites.</li>
+    <li>Implementation of a vector-based skill gap analysis tool providing actionable, granular readiness metrics against target career roles.</li>
+    <li>Engineering of an automated adaptive feedback loop that dynamically inserts refresher content upon quiz failure.</li>
+    <li>Creation of an interactive React frontend paired with an intelligent NLP chatbot and hands-free voice assistant.</li>
+  </ul>
+
+  <h4 style="margin-top: 20px;">7.2 Contributions to the Field:</h4>
+  <p>This project contributes significantly to adaptive educational technology by:</p>
+  <ul>
+    <li><strong>Democratization of Personalized Education:</strong> Delivers adaptive, high-quality tutoring capabilities without requiring expensive private instructional resources.</li>
+    <li><strong>Practical Application of Graph Theory & NLP:</strong> Demonstrates how Kahn's Topological Sort and TF-IDF can be unified into an efficient curriculum sequencing pipeline.</li>
+    <li><strong>Automated Remediation Workflows:</strong> Showcases dynamic syllabus adjustment, addressing learning deficits in real time.</li>
+    <li><strong>Open-Source Architectural Reference:</strong> Establishes a modular full-stack reference design for adaptive educational platforms.</li>
+  </ul>
+</div>
+
+<!-- PAGE 18: LIMITATIONS, IMPACT & FINAL REMARKS -->
+<div class="page">
+  <h4>7.3 Limitations and Future Work:</h4>
+  <ul>
+    <li><strong>Large Language Model (LLM) Integration:</strong> Incorporate fine-tuned open-source LLMs (such as LLaMA 3 or Mistral) for deeper conversational explanations.</li>
+    <li><strong>Multi-Modal Content Processing:</strong> Expand curriculum ingestion to automatically parse lecture videos, PDF textbooks, and code repositories.</li>
+    <li><strong>Collaborative Social Learning:</strong> Introduce peer-matching algorithms to connect students with complementary skill profiles.</li>
+    <li><strong>Mobile Application Deployment:</strong> Package the frontend as a cross-platform mobile application using React Native or Flutter.</li>
+  </ul>
+
+  <h4 style="margin-top: 20px;">7.4 Impact on Educational Technology Ecosystem:</h4>
+  <ul>
+    <li>Lowers barrier to entry for structured career transitions into AI, Data Science, and Software Engineering.</li>
+    <li>Reduces learner dropouts by addressing prerequisite gaps early in the study process.</li>
+    <li>Empowers academic institutions to automate diagnostic profiling and provide targeted student support.</li>
+  </ul>
+
+  <h4 style="margin-top: 20px;">7.5 Final Remarks:</h4>
+  <p>
+    The successful realization of this system confirms the effectiveness of combining graph-based dependency modeling with NLP to solve curriculum planning challenges. By moving beyond rigid, linear syllabi, the platform delivers an adaptive educational experience that enhances learner comprehension, retention, and career readiness.
+  </p>
+  <div style="height: 25px;"></div>
+  <h4>RUBRICS :</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Aim & Algorithm<br>(10 Marks)</th>
+        <th>Coding & Implementation<br>(20 Marks)</th>
+        <th>Optimization<br>(10 Marks)</th>
+        <th>Output<br>(5 Marks)</th>
+        <th>Time Management<br>(5 Marks)</th>
+        <th>Viva<br>(10 Marks)</th>
+        <th>Total<br>(60 Marks)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height: 45px;">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 style="margin-top: 25px;">RESULT:</h4>
+  <p>
+    The <strong>AI-Powered Personalized Learning Path Generation System</strong> has been successfully implemented and tested, demonstrating robust DAG-based prerequisite curriculum sequencing, accurate numerical skill-gap analysis, adaptive quiz-driven remediation, and intuitive web and voice interfaces. All core functionalities operate with high performance and reliability, establishing an effective AI-powered educational platform.
+  </p>
+</div>
+
+</body>
+</html>
